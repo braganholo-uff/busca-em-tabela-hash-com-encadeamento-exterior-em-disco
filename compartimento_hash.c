@@ -1,12 +1,13 @@
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
 #include <string.h>
 #include <stdlib.h>
 #include <stdarg.h>
 #include <stdio.h>
 
-typedef struct CompartimentoHash {
-    int prox;
-} TCompartimento;
-
+#include "compartimento_hash.h"
 
 void imprime_compartimento(TCompartimento *compartimento)
 {

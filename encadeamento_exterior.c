@@ -1,8 +1,12 @@
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
 #include <limits.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-#include "cliente.c"
-#include "compartimento_hash.c"
+#include "encadeamento_exterior.h"
 
 #define M 7
 
@@ -31,14 +35,16 @@ void imprime_arquivos(char *nome_arquivo_hash, char *nome_arquivo_dados) {
  */
 int busca(int cod_cli, char *nome_arquivo_hash, char *nome_arquivo_dados, int m) {
     //TODO: Implementar essa função
+    return INT_MAX;
 }
 
 int main() {
-    /* Essa função gera a saída que é usada no teste do run.codes. Ela NÃO DEVE SER MODIFICADA */
+    /* Essa função gera a saída que é usada nos casos de teste. Ela NÃO DEVE SER MODIFICADA */
     int cod;
     int pont;
 
-    //Imprime arquivos de entrada
+    //Descomente essa linha de código caso deseje imprimir o conteúdo dos arquivos de entrada para analisar
+    //o comportamento da sua implementação
     //imprime_arquivos("tabHash.dat", "clientes.dat");
 
     //le chave a ser buscada
@@ -47,5 +53,5 @@ int main() {
     pont = busca(cod, "tabHash.dat", "clientes.dat", M);
 
     //Imprime resultado da função
-    printf("RESULTADO: %d", pont);
+    printf("RESULTADO: %d\n", pont);
 }
